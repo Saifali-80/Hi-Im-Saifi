@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saif Ali | Software & Web Developer</title>
+  <meta name="description" content="Interactive professional resume of Saif Ali — Software Developer, Web Developer & AI Enthusiast building smart web apps.">
+
+  <!-- SEO & Social -->
+  <link rel="canonical" href="https://yourdomain.com">
+  <meta property="og:title" content="Saif Ali | Software & Web Developer">
+  <meta property="og:description" content="Explore the interactive professional portfolio of Saif Ali.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2D6A4F">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Saif Ali",
+    "jobTitle": "Software & Web Developer",
+    "url": "https://yourdomain.com",
+    "email": "muhammadsaifali80@gmail.com",
+    "telephone": "+923111261269",
+    "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
+    "sameAs": [
+      "https://www.linkedin.com/in/saif-ali-4609a2248/",
+      "https://github.com/Saifali-80"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER / NAV
+  ═══════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <nav class="nav-container" aria-label="Main navigation">
+
+      <a href="#" class="nav-logo">Saif<span>.</span></a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about"      class="nav-link">About</a></li>
+        <li><a href="#skills"     class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects"   class="nav-link">Projects</a></li>
+        <li><a href="#education"  class="nav-link">Education</a></li>
+        <li><a href="#contact"    class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀️</button>
+        <button class="menu-toggle"  id="menuToggle"  aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <nav class="nav-mobile" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN
+  ═══════════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ── HERO ─────────────────────────────── -->
+    <div class="hero-wrapper">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+        <div class="hero-particles" id="particles"></div>
+      </div>
+
+      <section class="hero" id="hero" aria-label="Introduction">
+
+        <!-- Left: Content -->
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span aria-hidden="true"></span>
+            Open to Freelance &amp; Internships
+          </div>
+
+          <h1>
+            Building <em>Smart Web Apps</em><br>
+            that Solve <span class="underline-coral">Real</span><br>
+            <span class="gradient-word">Problems</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Software &amp; Web Developer | AI Enthusiast — crafting modern,
+            scalable applications with React, Node.js, Python, and Next.js.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View Projects ↗</a>
+            <a href="#contact"  class="btn btn-ghost">Contact Me</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Projects Shipped</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Tech Stacks</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Avatar -->
+        <div class="hero-visual" id="heroVisual">
+          <div class="avatar-3d-wrapper" id="avatar3d">
+            <div class="avatar-frame">
+              <div class="avatar-glow"       aria-hidden="true"></div>
+              <div class="avatar-ring-outer" aria-hidden="true"></div>
+              <div class="avatar-ring-inner" aria-hidden="true"></div>
+              <img
+                src="assets/images/profile.jpg"
+                alt="Profile photo of Saif Ali"
+                loading="eager"
+                width="360" height="360"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <!-- Fallback avatar -->
+              <div class="avatar-fallback" aria-hidden="true">SA</div>
+            </div>
+
+            <div class="avatar-badge" role="status" aria-live="polite">
+              <div class="dot" aria-hidden="true"></div>
+              <span class="badge-text">Open to Work</span>
+            </div>
+
+            <div class="floating-tag tag-react" aria-hidden="true">⚛️ React</div>
+            <div class="floating-tag tag-node"  aria-hidden="true">🐍 Python</div>
+            <div class="floating-tag tag-ts"    aria-hidden="true">🟢 Node.js</div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- ── ABOUT ─────────────────────────────── -->
+    <section id="about" class="section about-section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label"></p>
+          <h2 class="section-title" id="about-heading">About Me</h2>
+        </div>
+        <div class="about-grid reveal">
+          <div class="about-text">
+            <p>
+              I am a passionate <strong>Software Developer, Web Developer, and AI Enthusiast</strong>
+              focused on building modern, responsive, and user-friendly web applications.
+              I enjoy transforming ideas into real-world digital solutions that are both
+              functional and visually appealing.
+            </p>
+            <p>
+              Currently, I am enhancing my skills in <strong>Agentic AI</strong> through the
+              Saylani Mass IT Training Program while strengthening my expertise in full-stack
+              web development.
+            </p>
+            <p>
+              I specialize in creating scalable and high-performance web applications using
+              <strong>Python, JavaScript, React, Next.js, and Node.js</strong>, along with
+              API integration and clean UI development. Always open to freelance projects,
+              internships, and collaboration opportunities.
+            </p>
+            
+            <div class="about-tags">
+              <span class="skill-pill">React.js</span>
+              <span class="skill-pill">Next.js</span>
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Agentic AI</span>
+              <span class="skill-pill">Flask</span>
+              <span class="skill-pill">REST APIs</span>
+              <span class="skill-pill">UI/UX</span>
+            </div>
+          </div>
+          
+            <div class="about-info-item">
+              <span class="about-info-icon" aria-hidden="true">💼</span>
+              <div>
+                <span class="about-info-label">Availability</span>
+                <span class="about-info-value" style="color:var(--sage);font-weight:600;">
+                  Available for Work
+                </span>
+              </div>
+            </div>
+            <div class="about-info-item">
+              <span class="about-info-icon" aria-hidden="true">🌍</span>
+              <div>
+                <span class="about-info-label">Work Mode</span>
+                <span class="about-info-value">Remote / On-site</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ─────────────────────────────── -->
+    <section id="skills" class="section skills-section" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label"></p>
+          <h2 class="section-title" id="skills-heading">Technical Skills</h2>
+        </div>
+        <div class="skills-grid reveal-stagger">
+
+          <div class="skill-category">
+            <div class="skill-icon" aria-hidden="true">🎨</div>
+            <h3>Frontend</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-pill">HTML5</li>
+              <li class="skill-pill">CSS3 / SCSS</li>
+              <li class="skill-pill">JavaScript (ES6+)</li>
+              <li class="skill-pill">React.js</li>
+              <li class="skill-pill">Next.js</li>
+              <li class="skill-pill">Responsive Design</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-icon" aria-hidden="true">⚙️</div>
+            <h3>Backend</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-pill">Node.js</li>
+              <li class="skill-pill">Express.js</li>
+              <li class="skill-pill">Python</li>
+              <li class="skill-pill">Django</li>
+              <li class="skill-pill">Flask</li>
+              <li class="skill-pill">REST APIs</li>
+              <li class="skill-pill">PostgreSQL</li>
+              <li class="skill-pill">SQLite</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-icon" aria-hidden="true">🛠️</div>
+            <h3>Tools &amp; Design</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-pill">Git / GitHub</li>
+              <li class="skill-pill">Docker</li>
+              <li class="skill-pill">VS Code</li>
+              <li class="skill-pill">Figma</li>
+              <li class="skill-pill">Canva</li>
+              <li class="skill-pill">UI/UX Design</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-icon" aria-hidden="true">🤖</div>
+            <h3>AI &amp; Emerging</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-pill">Agentic AI</li>
+              <li class="skill-pill">AI Integration</li>
+              <li class="skill-pill">API Integration</li>
+              <li class="skill-pill">Automation</li>
+              <li class="skill-pill">Prompt Engineering</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE ─────────────────────────── -->
+    <section id="experience" class="section" aria-labelledby="exp-heading">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label"></p>
+          <h2 class="section-title" id="exp-heading">Work Experience</h2>
+        </div>
+
+        <div class="timeline" role="list">
+
+          <article class="timeline-item reveal" role="listitem">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <header class="timeline-header">
+                <h3 class="timeline-title">Executive Sales Representative</h3>
+                <span class="timeline-date">2023 — Present</span>
+              </header>
+              <p class="timeline-company">The Skin Xperts – By Dr Javed Alam Farooqui · Karachi</p>
+              <ul class="timeline-details">
+                <li>Leveraged communication, client management, and analytical skills to drive business growth.</li>
+                <li>Gained hands-on experience with digital tools and social media platforms for efficient workflow.</li>
+                <li>Developed skills transferable to web projects including project coordination and problem-solving.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal" role="listitem">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <header class="timeline-header">
+                <h3 class="timeline-title">Customer Support Executive</h3>
+                <span class="timeline-date">2022</span>
+              </header>
+              <p class="timeline-company">JagahOnline · Karachi</p>
+              <ul class="timeline-details">
+                <li>Handled customer queries and provided effective support solutions across multiple channels.</li>
+                <li>Strengthened problem-solving, communication, and troubleshooting skills under pressure.</li>
+                <li>Built experience in user-focused thinking applicable to UI/UX and web application design.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ───────────────────────────── -->
+    <section id="projects" class="section projects-section" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label"></p>
+          <h2 class="section-title" id="projects-heading">My Work</h2>
+        </div>
+
+        <div class="projects-grid reveal-stagger">
+
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <img
+                src="/assets/images/saif1.jpg"
+                alt="Saifi's Clothing e-commerce platform screenshot"
+                class="project-image"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="project-image-placeholder" style="display:none;">
+                <span>Saifi's Clothing</span>
+              </div>
+              <div class="project-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="project-info">
+              <h3>SAIFI'S Clothing</h3>
+              <p>A high-performance e-commerce platform built with Next.js and Python/Flask backend — featuring product listings, cart, and order management.</p>
+              <div class="project-tech" role="list" aria-label="Technologies used">
+                <span class="tech-tag" role="listitem">Next.js</span>
+                <span class="tech-tag" role="listitem">Python</span>
+                <span class="tech-tag" role="listitem">Flask</span>
+                <span class="tech-tag" role="listitem">SQLite</span>
+              </div>
+              <div class="project-links">
+                <a href="https://saifali80.pythonanywhere.com/" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                <a href="https://github.com/Saifali-80/SAIFI-S"  class="btn btn-ghost btn-sm"   target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <img
+                src="/assets/images/saif.jpg"
+                alt="SAIFI-S-ERP system screenshot"
+                class="project-image"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="project-image-placeholder" style="display:none;">
+                <span>SAIFI-S-ERP System</span>
+              </div>
+              <div class="project-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="project-info">
+              <h3>SAIFI-S-ERP</h3>
+              <p>A comprehensive ERP system built with Python and Flask for managing business operations, invoicing, client management, and administrative workflows end-to-end.</p>
+              <div class="project-tech" role="list" aria-label="Technologies used">
+                <span class="tech-tag" role="listitem">Python</span>
+                <span class="tech-tag" role="listitem">Flask</span>
+                <span class="tech-tag" role="listitem">SQLite</span>
+                <span class="tech-tag" role="listitem">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://saifi.pythonanywhere.com/login/?next=/" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                <a href="https://github.com/Saifali-80/SAIFI-S-ERP"       class="btn btn-ghost btn-sm"   target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ──────────────────────────── -->
+    <section id="education" class="section" aria-labelledby="edu-heading">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label"></p>
+          <h2 class="section-title" id="edu-heading">Academic Background</h2>
+        </div>
+
+        <div class="education-grid reveal-stagger">
+
+          <article class="education-item">
+            <div class="edu-badge" aria-hidden="true">🤖</div>
+            <h3 class="education-degree">Agentic AI Engineering</h3>
+            <p class="education-institution">Saylani Mass I.T Training (S.M.I.T)</p>
+            <span class="education-date">2026</span>
+            <p class="education-achievement">Specialized in Agentic AI — building intelligent, autonomous systems and modern AI-driven web applications.</p>
+          </article>
+
+          <article class="education-item">
+            <div class="edu-badge" aria-hidden="true">🎓</div>
+            <h3 class="education-degree">Bachelor of Arts (B.A.)</h3>
+            <p class="education-institution">University of Sindh</p>
+            <span class="education-date">2024</span>
+            <p class="education-achievement">Graduate focused on continuous improvement, effective communication, and professional development.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────── -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-section reveal">
+            <div class="contact-glow-1" aria-hidden="true"></div>
+            <div class="contact-glow-2" aria-hidden="true"></div>
+
+            <p class="section-label" style="justify-content:center;">Get In Touch</p>
+            <h2 class="section-title" id="contact-heading">
+              Let's Build Something<br>
+              <em style="font-style:normal;background:linear-gradient(135deg,var(--sage),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                Amazing Together
+              </em>
+            </h2>
+            <p class="contact-subtitle">
+              Whether you have a project, want to collaborate, or just want to say hello —
+              my inbox is always open. I'll respond within 24 hours.
+            </p>
+
+            <div class="contact-cta">
+              <a href="mailto:muhammadsaifali80@gmail.com" class="btn btn-primary">Send Email ✉️</a>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-info-card">
+                <div class="contact-info-icon" aria-hidden="true">📧</div>
+                <span class="contact-info-label">Email</span>
+                <a href="mailto:muhammadsaifali80@gmail.com" class="contact-info-value" style="color:var(--sage);">
+                  muhammadsaifali80@gmail.com
+                </a>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-info-icon" aria-hidden="true">📞</div>
+                <span class="contact-info-label">Phone</span>
+                <a href="tel:+923111261269" class="contact-info-value" style="color:var(--sage);">
+                  +92 311 1261269
+                </a>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-info-icon" aria-hidden="true">📍</div>
+                <span class="contact-info-label">Location</span>
+                <span class="contact-info-value">Karachi, Pakistan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">© 2026 Saif Ali. All rights reserved.</p>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="social-links" role="list">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/saif-ali-4609a2248/" class="social-link" role="listitem"
+             target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/Saifali-80" class="social-link" role="listitem"
+             target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+          </a>
+          <!-- Email -->
+          <a href="mailto:muhammadsaifali80@gmail.com" class="social-link" role="listitem" aria-label="Send Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </a>
+          <!-- Phone -->
+          <a href="tel:+923111261269" class="social-link" role="listitem" aria-label="Call Saif Ali">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script src="js/script.js" defer></script>
+
+  <!-- Inline boot script (runs before script.js if needed) -->
+  <script>
+    /* Service Worker */
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+
+    /* ── Particles ── */
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('particles');
+      if (container) {
+        for (let i = 0; i < 18; i++) {
+          const p = document.createElement('div');
+          const size = Math.random() * 6 + 3;
+          const colors = [
+            'rgba(45,106,79,0.3)',
+            'rgba(214,140,109,0.25)',
+            'rgba(201,136,58,0.2)'
+          ];
+          Object.assign(p.style, {
+            position: 'absolute',
+            width: size + 'px',
+            height: size + 'px',
+            borderRadius: '50%',
+            background: colors[Math.floor(Math.random() * 3)],
+            left: Math.random() * 100 + '%',
+            top: Math.random() * 100 + '%',
+            animation: `floatParticle ${3 + Math.random() * 4}s ease-in-out ${Math.random() * 2}s infinite alternate`
+          });
+          container.appendChild(p);
+        }
+      }
+
+      /* ── Header scroll ── */
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
+
+      /* ── Theme toggle ── */
+      const html   = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const isDark = () => html.getAttribute('data-theme') === 'dark';
+      const setTheme = dark => {
+        html.setAttribute('data-theme', dark ? 'dark' : 'light');
+        toggle.textContent = dark ? '🌙' : '☀️';
+        toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+      };
+      /* Restore saved theme */
+      const saved = localStorage.getItem('theme');
+      if (saved) setTheme(saved === 'dark');
+      else if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme(true);
+
+      toggle.addEventListener('click', () => {
+        toggle.style.transition = 'transform 0.5s';
+        toggle.style.transform  = 'rotate(360deg) scale(1.2)';
+        setTimeout(() => { toggle.style.transform = ''; }, 500);
+        setTheme(!isDark());
+      });
+
+      /* ── Mobile menu ── */
+      const menuBtn   = document.getElementById('menuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      menuBtn.addEventListener('click', () => {
+        const open = mobileNav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open);
+        menuBtn.textContent = open ? '✕' : '☰';
+      });
+      mobileNav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', false);
+          menuBtn.textContent = '☰';
+        });
+      });
+
+      /* ── Active nav on scroll ── */
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a, .nav-mobile a');
+      new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            navLinks.forEach(l => {
+              l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+            });
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' }).observe
+        && sections.forEach(s => {
+          new IntersectionObserver(entries => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                navLinks.forEach(l => {
+                  l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+                });
+              }
+            });
+          }, { rootMargin: '-30% 0px -60% 0px' }).observe(s);
+        });
+
+      /* ── Scroll reveal ── */
+      const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+      new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed');
+          }
+        });
+      }, { threshold: 0.1 }).observe
+        && reveals.forEach(el => {
+          new IntersectionObserver(entries => {
+            entries.forEach(e => {
+              if (e.isIntersecting) e.target.classList.add('revealed');
+            });
+          }, { threshold: 0.1 }).observe(el);
+        });
+
+      /* ── 3D avatar mouse tilt ── */
+      const visual = document.getElementById('heroVisual');
+      const avatar = document.getElementById('avatar3d');
+      if (visual && avatar) {
+        visual.addEventListener('mousemove', e => {
+          const r = visual.getBoundingClientRect();
+          const x = (e.clientX - r.left)  / r.width  - 0.5;
+          const y = (e.clientY - r.top)   / r.height - 0.5;
+          avatar.style.transform = `perspective(800px) rotateY(${x * 15}deg) rotateX(${-y * 10}deg)`;
+        });
+        visual.addEventListener('mouseleave', () => {
+          avatar.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
+        });
+      }
+
+      /* ── 3D project card tilt ── */
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width  - 0.5;
+          const y = (e.clientY - r.top)  / r.height - 0.5;
+          card.style.transform = `translateY(-10px) perspective(600px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+
+      /* ── Skill category tilt ── */
+      document.querySelectorAll('.skill-category').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width  - 0.5;
+          const y = (e.clientY - r.top)  / r.height - 0.5;
+          card.style.transform = `translateY(-8px) perspective(500px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    });
+  </script>
+</body>
+</html>

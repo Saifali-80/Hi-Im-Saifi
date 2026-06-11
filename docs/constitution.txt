@@ -1,0 +1,377 @@
+INTERACTIVE RESUME CONSTITUTION v1.1.0
+
+Version: 1.1.0
+Ratified: 2026-01-15
+Last Amended: 2026-06-10
+
+==================================================
+CORE PRINCIPLES
+===============
+
+I. PERFORMANCE-FIRST
+
+* Initial render must be 2 seconds or less.
+* User interactions should respond within 100ms.
+* Animations must not block the main thread.
+* Use requestAnimationFrame where appropriate.
+* Use CSS transforms and will-change strategically.
+* Lazy load all non-critical assets.
+* Optimize images, fonts, and scripts.
+
+II. MOBILE-RESPONSIVE (NON-NEGOTIABLE)
+
+* Must function from 320px to 4K screens.
+* Mobile-first CSS architecture.
+* Fluid typography using clamp() and viewport units.
+* Touch targets must be at least 44×44px.
+* Test using real devices or browser emulation.
+
+III. ACCESSIBILITY FIRST
+
+* All interactive elements must be keyboard accessible.
+* Semantic HTML is required.
+* Every image requires meaningful alt text.
+* WCAG 2.1 AA contrast compliance required.
+* Icon-only buttons require aria-labels.
+* Respect prefers-color-scheme by default.
+* Respect prefers-reduced-motion.
+
+IV. SELF-CONTAINED
+
+* Core resume must function offline after first load.
+* Host fonts locally.
+* Vanilla HTML, CSS, and JavaScript preferred.
+* External libraries must gracefully degrade.
+
+V. SIMPLICITY & MAINTAINABILITY
+
+* Code understandable within 10 minutes.
+* Flat CSS specificity.
+* Avoid unnecessary abstractions.
+* Sections independently editable.
+* Comment WHY, not WHAT.
+* Core CSS maximum 300 lines.
+* Core JavaScript maximum 200 lines.
+
+VI. SECURITY BY DEFAULT
+
+* HTTPS only.
+* No secrets or credentials in repository.
+* External links require:
+  rel="noopener noreferrer"
+* Implement Content Security Policy.
+* Avoid inline JavaScript.
+* Sanitize dynamic content.
+* Prevent reverse tabnabbing.
+* No high or critical security vulnerabilities.
+
+VII. SEO & DISCOVERABILITY
+
+Required metadata:
+
+* Title
+* Meta description
+* Open Graph tags
+* Twitter Card tags
+* Canonical URL
+* JSON-LD structured data
+* robots.txt
+* sitemap.xml
+
+Targets:
+
+* Lighthouse SEO >= 95
+* Lighthouse Best Practices >= 95
+
+VIII. PROGRESSIVE ENHANCEMENT
+
+Core functionality must work without JavaScript.
+
+Required without JS:
+
+* Navigation
+* Contact information
+* Resume download
+* Experience section
+* Projects section
+
+JavaScript may enhance:
+
+* Theme persistence
+* Animations
+* Typing effects
+* Skill visualizations
+* Active navigation
+
+==================================================
+PERFORMANCE BUDGETS
+===================
+
+Bundle Size:
+Maximum 100 KB gzipped
+
+First Contentful Paint:
+Maximum 0.8s
+
+Largest Contentful Paint:
+Maximum 1.5s
+
+Time To Interactive:
+Maximum 2.0s
+
+Cumulative Layout Shift:
+Maximum 0.1
+
+Interaction To Next Paint:
+Maximum 200ms
+
+Total Images:
+Maximum 500 KB
+
+==================================================
+BROWSER SUPPORT
+===============
+
+Supported:
+
+* Chrome (last 2 versions)
+* Firefox (last 2 versions)
+* Safari (last 2 versions)
+* Edge (last 2 versions)
+
+No IE11 support required.
+
+==================================================
+REQUIRED FILE STRUCTURE
+=======================
+
+interactive-resume/
+
+index.html
+
+css/
+style.css
+
+js/
+script.js
+
+assets/
+images/
+fonts/
+resume.pdf
+
+README.md
+
+==================================================
+DESIGN GUIDELINES
+=================
+
+Typography
+
+Primary Font:
+System fonts
+
+Headings:
+Responsive scale
+
+Line Height:
+1.5 body
+1.2 headings
+
+Maximum line length:
+70 characters
+
+Spacing System
+
+Use multiples of 8px:
+
+4
+8
+16
+24
+32
+48
+64
+80
+96
+
+==================================================
+ANIMATION GUIDELINES
+====================
+
+UI Animation:
+150–300ms
+
+Page Transitions:
+400–600ms
+
+Preferred Easing:
+cubic-bezier(0.2, 0.9, 0.4, 1.1)
+
+Rules:
+
+* Respect reduced motion preferences.
+* No infinite loops.
+* Maximum 3 simultaneous animations.
+* Prefer transform, opacity, filter.
+* Avoid animating width, height, margin, padding, top, left.
+
+==================================================
+DARK MODE REQUIREMENTS
+======================
+
+Theme Priority:
+
+1. Saved user preference
+2. System preference
+3. Light mode fallback
+
+Theme switching must not cause layout shift.
+
+==================================================
+OFFLINE RESILIENCE
+==================
+
+Implement lightweight service worker.
+
+Cache:
+
+* HTML
+* CSS
+* JavaScript
+* Fonts
+* Images
+* resume.pdf
+
+Resume must remain available offline after first visit.
+
+==================================================
+CONTENT GOVERNANCE
+==================
+
+Required Sections
+
+* Hero
+* About
+* Skills
+* Experience
+* Projects
+* Education
+* Contact
+* Resume Download
+
+Optional Sections
+
+* Blog
+* Testimonials
+* Awards
+* Certifications
+* Speaking
+* Open Source
+
+Project Requirements
+
+Every project must include:
+
+* Name
+* Description
+* Technology Stack
+* Live Demo
+* Source Code
+* Measurable Impact
+
+==================================================
+CODE QUALITY STANDARDS
+======================
+
+HTML
+
+* W3C validation passing
+* No unnecessary inline styles
+
+CSS
+
+* No !important except third-party overrides
+* CSS variables for theming
+* BEM or utility naming convention
+
+JavaScript
+
+* "use strict";
+* No eval()
+* No global variables
+* Handle promise rejections
+* Prefer const and let
+
+==================================================
+DEPLOYMENT STANDARDS
+====================
+
+Minimum Release Requirements
+
+* Lighthouse Performance >= 90
+* Accessibility >= 95
+* SEO >= 95
+* Best Practices >= 95
+
+Additional Requirements
+
+* No console errors
+* No broken links
+* Mobile tested
+* Offline tested
+* Keyboard tested
+* Dark mode tested
+
+==================================================
+CONTINUOUS INTEGRATION
+======================
+
+Recommended Tools
+
+* GitHub Actions
+* ESLint
+* Stylelint
+* Lighthouse CI
+
+Block merges if:
+
+* Performance < 90
+* Accessibility < 95
+* SEO < 95
+
+==================================================
+GOVERNANCE
+==========
+
+Constitution Authority
+
+This constitution supersedes all other development practices.
+
+Amendment Process
+
+1. Propose change.
+2. Discuss for 24 hours minimum.
+3. Update version.
+4. Update amendment date.
+5. Migrate code within 7 days.
+
+Compliance Review
+
+* Self review before commit.
+* Peer review before merge.
+* Automated review through CI.
+
+==================================================
+RUNTIME GUIDANCE
+================
+
+When a situation is not covered by this constitution:
+
+* Use common sense.
+* Prioritize user experience.
+* Prioritize accessibility.
+* Prioritize maintainability.
+* Document trade-offs.
+
+END OF DOCUMENT

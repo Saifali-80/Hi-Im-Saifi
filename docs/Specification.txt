@@ -1,0 +1,154 @@
+1. Project Overview
+
+Project Name: Interactive Resume Website
+Version: 1.1.0
+Purpose: Create a modern, fast, accessible, SEO-friendly, and offline-capable personal resume website that showcases professional profile, skills, experience, projects, education, and contact information.
+
+Objectives:
+
+Highly performant and fast-loading resume website.
+Excellent user experience on all devices.
+Full accessibility compliance (WCAG 2.1 AA).
+Offline availability after first visit.
+Simple, maintainable, and modular code.
+Lighthouse scores above defined thresholds.
+2. Functional Requirements
+2.1 Hero Section
+Name, designation, tagline
+Profile image
+CTA buttons: View Projects, Contact, Download Resume
+Must render above fold and work without JavaScript
+2.2 About Section
+Personal summary, career objective, professional highlights
+Maximum line length: 70 characters
+Fully responsive
+2.3 Skills Section
+Technical skills, tools, soft skills
+Optional visualizations/animations with JS
+Must remain readable without JS
+2.4 Experience Section
+Timeline layout with company, role, duration, responsibilities
+Keyboard accessible and mobile responsive
+2.5 Projects Section
+
+Each project must include:
+
+Name, Description, Technology Stack
+Live Demo, Source Code
+Measurable Impact
+External links secure (rel="noopener noreferrer")
+2.6 Education Section
+Institution, Degree, Graduation Year, Achievements
+2.7 Contact Section
+Email, Phone, Location, Social Links
+Must work without JS
+2.8 Resume Download
+PDF downloadable online and offline
+One-click functionality
+3. Non-Functional Requirements
+Performance Targets
+Metric	Target
+FCP	≤ 0.8s
+LCP	≤ 1.5s
+TTI	≤ 2.0s
+CLS	≤ 0.1
+INP	≤ 200ms
+Bundle Size	≤ 100 KB gzipped
+Total Images	≤ 500 KB
+Accessibility
+WCAG 2.1 AA compliance
+Semantic HTML, ARIA labels
+Keyboard navigation and focus states
+Contrast compliant colors
+Responsiveness
+Mobile-first design (320px–4K)
+Fluid typography using clamp()
+Touch targets ≥ 44×44px
+Security
+HTTPS only
+CSP enabled
+No inline scripts or credentials
+Sanitized dynamic content
+Reverse tabnabbing prevention
+SEO
+Metadata: title, description, OG, Twitter Cards, JSON-LD, canonical URL
+robots.txt, sitemap.xml
+Lighthouse SEO ≥ 95
+4. High-Level Design (HLD)
+
+Architecture: Client-side static website
+
+Layers:
+
+Presentation Layer: Layout, theme switching, animations, navigation, responsiveness
+Behavior Layer: Theme persistence, scroll effects, lazy loading, active navigation
+Offline Layer: Service Worker caching HTML, CSS, JS, fonts, images, resume.pdf
+
+Data Structure:
+
+Profile: Name, Title, Tagline, Photo, Resume Link
+Skills: Categories like Frontend, Backend, DevOps, Soft Skills
+Experience: Company, Role, Duration, Responsibilities
+Projects: Name, Description, Stack, Demo URL, Source URL, Impact Metrics
+
+Security & Performance: HTTPS, CSP, lazy loading, minimal JS, optimized images/fonts
+
+5. UI/UX Specification & User Stories
+
+Design Philosophy: Minimal, Professional, Interactive
+Theme Colors: Primary #2563EB, Secondary #1E293B, Accent #14B8A6, Background #FFFFFF, Dark Background #0F172A
+Font: System fonts, responsive headings, 1.5 line height (body), 1.2 (headings)
+
+Navigation: Sticky, keyboard accessible, active section highlight, hamburger menu on mobile
+
+User Stories:
+
+Hero: Recruiter sees candidate name, role, CTA immediately
+Resume Download: One-click offline download
+Skills: Quick technical skills assessment
+Experience: Chronological work history
+Projects: Validate practical experience via live demo & source
+Contact: Easy communication via clickable links
+Accessibility: Full keyboard navigation, focus indicators
+Dark Mode: Optional, saved preference, no layout shift
+6. Development Roadmap
+Phase	Tasks	Deliverables
+1 — Planning	Requirements review, content collection, resume prep, asset optimization	Final scope
+2 — Foundation	Project structure, base HTML, CSS variables, semantic layout	Skeleton website
+3 — Core UI	Hero, About, Skills, Experience, Projects, Education, Contact, Navigation	Complete responsive UI
+4 — Interactivity	Theme switch, active nav, scroll animations, lazy load	Interactive experience
+5 — Accessibility	Keyboard testing, ARIA, contrast, focus	WCAG 2.1 AA compliance
+6 — Offline	Service worker, caching, offline testing	Offline-ready app
+7 — SEO	Metadata, OG, Twitter Cards, JSON-LD, robots, sitemap	SEO optimized
+8 — Performance	CSS/JS optimization, image compression, lazy load	Lighthouse Performance > 90
+9 — QA & Testing	Functional, responsive, accessibility, offline	Release candidate
+10 — Deployment	GitHub repo, hosting, HTTPS, Lighthouse audit	Production release
+
+Milestones: Wireframes approved → Responsive UI → Interactive features → Offline ready → SEO complete → Production launch
+
+Definition of Done:
+
+Lighthouse Performance ≥ 90
+Accessibility ≥ 95
+SEO ≥ 95
+Best Practices ≥ 95
+Offline Support Working
+Dark Mode Working
+Mobile Responsive
+No Console Errors / Broken Links
+7. File Structure
+interactive-resume/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── assets/
+│   ├── images/
+│   ├── fonts/
+│   └── resume.pdf
+├── sw.js
+├── robots.txt
+├── sitemap.xml
+├── manifest.json
+└── README.md
