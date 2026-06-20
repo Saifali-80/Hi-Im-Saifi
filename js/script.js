@@ -1,109 +1,75 @@
-"use strict";
-
-/**
- * INTERACTIVE RESUME CONSTITUTION v1.1.0
- * V. SIMPLICITY & MAINTAINABILITY: Core JavaScript maximum 200 lines.
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    setupActiveNav();
-    setupScrollReveal();
+
+  /* ── Header scroll ── */
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  /* ── Theme toggle ── */
+  const html   = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const isDark = () => html.getAttribute('data-theme') === 'dark';
+  const setTheme = dark => {
+    html.setAttribute('data-theme', dark ? 'dark' : 'light');
+    toggle.textContent = dark ? '🌙' : '☀️';
+    toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+  };
+
+  let saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  if (saved) setTheme(saved === 'dark');
+  else if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme(true);
+
+  toggle.addEventListener('click', () => setTheme(!isDark()));
+
+  /* ── Mobile menu ── */
+  const menuBtn   = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.textContent = open ? '✕' : '☰';
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', false);
+      menuBtn.textContent = '☰';
+    });
+  });
+
+  /* ── Active nav on scroll ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a, .nav-mobile a');
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => navObserver.observe(s));
+
+  /* ── Scroll reveal ── */
+  const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => revealObserver.observe(el));
+
+  /* ── Subtle card lift on hover (lighter touch than full 3D tilt) ── */
+  document.querySelectorAll('.project-card, .skill-category').forEach(card => {
+    card.addEventListener('mouseenter', () => { card.style.willChange = 'transform'; });
+    card.addEventListener('mouseleave', () => { card.style.willChange = 'auto'; });
+  });
+
 });
-
-/**
- * Theme Switching Logic
- * Dark mode priority: Saved preference > System preference > Light mode fallback
- */
-function initTheme() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    
-    const currentTheme = savedTheme || systemTheme;
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
-
-    themeToggle.addEventListener('click', () => {
-        const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        updateThemeIcon(theme);
-    });
-}
-
-function updateThemeIcon(theme) {
-    const icon = document.querySelector('.theme-icon');
-    if (icon) {
-        icon.textContent = theme === 'dark' ? '🌙' : '☀️';
-    }
-}
-
-/**
- * Active Navigation Highlight
- * Uses IntersectionObserver for better performance and precision.
- */
-function setupActiveNav() {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const sections = document.querySelectorAll('section');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -70% 0px',
-        threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                });
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => observer.observe(section));
-}
-
-/**
- * Scroll Reveal Animations
- * Uses IntersectionObserver to trigger entry animations.
- */
-function setupScrollReveal() {
-    const revealElements = document.querySelectorAll('.section, .project-card');
-    
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target); // Only reveal once
-            }
-        });
-    }, observerOptions);
-
-    revealElements.forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
-    });
-}
-
-/**
- * Performance Optimization: Lazy Loading Images (Native support check)
- */
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.dataset.src;
-    });
-} else {
-    // Fallback for browsers that don't support native lazy loading
-    // Could implement an IntersectionObserver here if needed, 
-    // but staying within line budget for now.
-}
